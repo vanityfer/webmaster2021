@@ -1,0 +1,75 @@
+/* Selector Universal -> todopoderoso en CSS / le pega a TODAS las etiquetas */
+*{
+    margin:0; /*espaciado externo del elemento*/
+    padding:0; /*espaciado interno*/
+}
+
+/*Selectores de etiqueta*/
+body{
+    background:tomato;
+    color:white;
+    font-family: 'Arial', sans-serif;
+}
+h1{
+    text-align:center;
+    color:rgb(117, 24, 8);
+}
+h3{
+    color:rgb(117, 24, 8)
+}
+p{
+    font-size: 18px;
+    /* color:aqua */
+}
+img{
+    width:100%;
+}
+
+/*Selector de Clase*/
+.parrafoPrincipal{
+    font-size: 20px;
+    border-left: 2px white dotted; 
+    border-right: 2px white dotted; 
+}
+
+.fontGeorgia{
+    font-family: 'Georgia', 'Times New Roman', 'Times', serif;
+    /* Sans-serif -> Arial, helvetica, Comic Sans, Verdana, Open Sans, etc */
+    /* Serif -> Timis New Roman, Garamond, Georgia,  */
+    color:black
+}
+
+/*Selector de ID*/
+#header{
+    border:3px solid black;
+    border-radius:30px;
+    overflow: hidden;
+}
+
+/*Maqueta*/
+#contenedor{
+    width:75%; /*80% del area visible -> viewport*/
+    margin-left:12.5%;
+    margin-right:12.5%;
+}
+
+/*
+Box Model - Modelo de Caja
+top -> arriba
+bottom -> abajo
+left -> izq
+right -> der
+
+margin / padding / border -> cuatro lados
+
+*/
+.principal{
+    padding:20px;
+    margin-top:20px;
+}
+.ingredientes{
+    padding:20px;
+}
+.elaboracion{
+    padding:20px;
+}

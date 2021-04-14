@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* Maqueta */
+
+#contenedor{
+    width:85%;
+    max-width:1100px; /*ancho maximo*/
+    margin:0 auto;/*atajo -> margin: top-bottom left-right*/
+}
+.header{
+    /* todos los lementos de bloque se estiran al ancho disponible */
+    background: rgb(18, 61, 204);
+    color:white;
+    margin-bottom: 1.5%;
+    padding:2%;
+    }
+
+.navbar{
+    background: rgb(4, 4, 70);
+    color: white;
+    text-align:end;
+    padding:2%; 
+    }
+    /* a{
+        color:white;
+    } */
+
+/* Contenido */
+
+    /* modelo de caja
+    El ancho real de los bloques -> width + padding + border
+    la propiedad box-sizing arregla esta suma, liberando todo el ancho al width
+    */
+
+.principal{
+    /* 80% + 4% + 4px */
+    box-sizing: border-box;
+    width:80%;
+    padding:2%;
+    /* border:2px solid; */
+    background:rgb(83, 83, 83);
+    float:left; 
+    }
+
+    .highlight1{
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .simple{
+        background: white;
+        padding: 15px;
+        width: 50%;
+        float:left;
+    }
+    .imgNota{
+        width:100%;
+    }
+
+
+.banner{
+    width:20%;
+    background:grey;
+    padding:2%;
+    float:right;
+    box-sizing: border-box;
+    height: 300px; 
+}
+
+
+
+.footer{
+    clear:both;
+    background: cadetblue;
+    padding: 4%;
+    text-align: center;
+}
