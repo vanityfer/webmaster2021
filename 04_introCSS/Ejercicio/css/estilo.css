@@ -1,0 +1,47 @@
+/*Reset CSS*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+*{
+    margin: 0;
+    padding:0;
+}
+
+/* Contenedor */
+
+    #contenedor{
+        width: 80%;
+        max-width:1100px;
+        margin-top: 15px;
+        margin-left: auto;    
+        margin-right: auto;
+        padding:1rem; /*font-size de <html>*/
+        border: 2px grey solid;
+    }
+
+/*header*/
+.header{
+    text-align: center;
+}
+
+/*Contenido*/
+.contenido{
+    background: rgba(121, 121, 121, 0.493);
+    color:white;
+    padding:15px;
+}
+p{
+    margin: 10px 0;
+}
+.principal{
+    font-weight: bold;
+}
+
+/* footer */
+.footer{
+    text-align: right;
+    /* background-image:url("https://images.squarespace-cdn.com/content/v1/5372e4d2e4b0fca9449770f9/1552447742565-5N3RUCUFG0ZNOHUTLJ59/ke17ZwdGBToddI8pDm48kOq3XtvT-rTx5PTvQrwH2CZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyBi6H8XuGgiOTkZYjvHnSOANLZGVcHi3tbrkKAT-GPtysHBglV01zzuz87anpmrvo/green-leaves-pattern_diana-toledano.png?format=2500w"); */
+    background-image: url('../img/banner1.jpg');
+    height: 90px;
+}
