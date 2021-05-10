@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding:0;
+}
+
+img{
+    width:100%;
+}
+.contenedor{
+    width:20%;
+    position: absolute;
+    top:20%;
+    left:40%;
+    z-index: -1 /*es solo para absolute y fixed*/
+}
+.contenedor2{
+    /* el valor del eje Z por default es 0 */
+    position: absolute;
+    z-index: 1;
+}
+
+
+.caja1,.caja2,.caja3{
+    /* width:20%; */
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    position:static; /*valor por default*/
+}
+.caja1{
+    background: brown;
+}
+.caja1:hover{
+    position:relative;
+    /*Position relative -> posicionamiento adicional al static*/
+    /*top / left / right / bottom*/
+    top:-20px;
+    left:20px;
+}
+.caja2{
+    background: chartreuse;
+}
+.caja3{
+    background: cornflowerblue;
+}
+
+/* Absoluto en relativo -> conteniendo absolutos
+Un absoluto tiene que estar anidado en un div distinto de static
+*/
+.contenedor3{
+    position:relative;
+    /* border: 2px solid grey; */
+    background: grey;
+    height: 500px;
+    width: 50%;
+    left:25%;
+    
+    }
+    .espacio{
+        position: absolute;
+        width:50%;
+        height: auto;
+        bottom: 0;
+        z-index:21;
+    }
+    .titulo{
+        position: absolute;
+        right: 0;
+    }
+    .topHeader{
+        background: gold;
+        width: 100%;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:99999999;
+        padding: 2%;
+    }
+
+/* fondo de video */
+.fondoVideo{
+    width:100vw; /*Viewport Width*/
+    height: 100vh; /*viewport Height*/
+    position: fixed;
+    background: green;
+}
+.fondoVideo video{
+    opacity: 0.6;
+}

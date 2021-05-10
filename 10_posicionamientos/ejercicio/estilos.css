@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    padding:0;
+    background-image: linear-gradient(blue,red) ;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    transition-duration: 3s;
+}
+body:hover{
+    background-image: linear-gradient(90deg, rgb(212, 27, 27),rgb(46, 46, 212),rgb(24, 136, 24));
+}
+main .img-100{
+    width: 100%;
+}
+
+.espacio{
+    width: 90%;
+    max-width: 1200px;
+    height: 95vh;
+    /* border:solid white; */
+    margin-left: auto ;
+    margin-right: auto ;
+    position: relative;
+    /* overflow: hidden; */
+    }
+    .luna{
+        width:12%;
+        position: absolute;
+        right:22%;
+        top: 10%;
+        z-index: 10;
+        transition:0.5s;
+    }
+    .luna:hover{
+        filter:blur(50px);
+        opacity:0;
+        transform:skew(30deg,30deg)
+        /* transform: rotate(-180deg);
+        transform-origin: bottom right; */
+    }
+    .tierra{
+        width:30%;
+        position: absolute;
+        right:0;
+        top: 10%;
+        z-index: 9;
+        transform: rotate(30deg);
+        transition-timing-function: ease-in-out;
+        transition: 5s,7s;
+        transition-property: transform,opacity;
+        transition-delay: 0s;
+    }
+    .tierra:hover{
+        transform: rotate(3turn);
+        opacity:0;
+    }
+
+
+
+    /* animacion -> traspaso entre un estado inicial y uno final */
+
+    /* inicial */
+    .arsat{
+        position: absolute;
+        top:40%;
+        left: 30%;
+        z-index: 10;
+        overflow: hidden;
+        transition-duration:1s;
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+        /* atajo 
+        transition: 2s all ease 0s;*/
+        transform: skew(-5deg,-5deg);
+    }
+    /* final */
+    .arsat:hover{
+        /* top:35%; */
+        border-radius:30px;
+        filter:grayscale(1);
+    }
+    .arsat:hover{
+        transform: skew(-8deg,-8deg);
+    }
+    .arsat:active{
+        transform: translateY(5px);
+    }
+
+    .cometa{
+        position: absolute;
+        right: 0;
+        bottom: 30px;
+        z-index: 1;
+    }
+
+    .jupiter{
+        width:60%;
+        position:absolute;
+        bottom:-30%;
+        /* border: 1px solid white; */
+        border-radius: 50%;
+        overflow: hidden;
+        transition-duration: 2000ms;
+    }
+    .jupiter:hover{
+        filter:blur(5px) grayscale(1);
+
+    }
+    .jupiter:active{
+        /* width:65%; */
+        transform:scale(1.5,1.5)
+    }
+
+    .texto{
+        width: 30%;
+        position: absolute;
+        left: 20%;
+        top:10%;
+        background: rgba(255, 255, 255, 0.37);
+        padding: 0 15px;
+        transition: 2s;
+        transform: skew(5deg,5deg) translateX(-30px);
+        }
+        .texto:hover{
+            /* width: 40% ; */
+            transform: scale(1.2,1.2);
+        }

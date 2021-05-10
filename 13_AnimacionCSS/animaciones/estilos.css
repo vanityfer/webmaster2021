@@ -1,0 +1,169 @@
+
+.caja {
+	width:70%;
+	height:100vh;
+	border:1px solid #333;
+	margin:0 auto;
+	text-align:center;
+	background: rgba(255, 255, 255, 0.527);
+}
+.logo{
+	text-align: left;
+	width: 100px;
+}
+h1{
+	opacity:0.2;
+	transition-duration:1s;
+}
+/* h1:hover{
+	opacity:1;
+} */
+
+div img{
+	width: 100%;
+}
+
+/*
+camelCase -> "camel case fuction" -> camelCaseFunction
+UpperCamelCase -> arranca con mayuscula -> JS, C, etc
+snake_case -> _ -> PHP
+kebab-case -> - -> CSS
+*/
+@keyframes anim-opacidad1{
+	/*Instancia inicial*/
+	0%{
+		opacity: 0.2;
+		color:white;
+		transform: translateY(-200px);
+	}
+	/*In. final*/
+	100%{
+		opacity:1;
+		color:tomato;
+		transform: translateY(0);
+	}
+}
+
+h1{
+	animation-name: anim-opacidad1;
+	animation-duration: 2s;
+	animation-delay: 3s;
+}
+.caja{
+	animation-name:  anim-opacidad1;
+	animation-duration: 2s;
+	animation-delay: 0s;
+}
+
+@keyframes anim-bola1{
+	0%{transform: translateX(0px) rotate(0);}
+	100%{transform: translateX(500px) rotate(360deg);}
+}
+.logo{
+	/* nombre de la animacion que se aplica */
+	animation-name: anim-bola1;
+	/* tiempo de ejecucion de la animacion -> seg o ms */
+	animation-duration: 5000ms;
+	/* Tiempo de retraso o retardo, antes de la animacion */
+	animation-delay: 4s;
+	/* cantidad de iteraciones o ciclos, entre inicio y final */
+	animation-iteration-count: 2;
+	/* pausar o continuar la animacion */
+	animation-play-state: running;
+	/* aceleracion en el progreso de la animacion */
+	animation-timing-function:linear;
+	/* direccion del avance de la animacion -> 0 a 100 */
+	animation-direction:alternate-reverse;
+	/* Define que las propiedades de la animacion se mantienen una vez finalizada */
+	animation-fill-mode:both ;
+}
+.logo:active{
+	animation-play-state: paused;
+}
+
+body{
+	background-image: url("img/bg.jpg");
+	background-size: cover;
+	background-position: left;
+	animation-name: anim-fondoBody;
+	animation-duration: 240s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@keyframes anim-fondoBody{
+	0%{background-position: left;}
+	100%{background-position: right;}
+}
+@keyframes anim-fondoBody2{
+	0%{background-position: left;}
+	100%{background-position: right;}
+}
+@keyframes anim-nube{
+	0%{transform: translateX(-200px);}
+	100%{transform: translateX(1000px)}
+}
+
+.nube{
+	position:absolute;
+	left: 0;
+	width:15%;
+	top:5%;
+	z-index: -1;
+	animation-name: anim-nube;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+}
+
+/* Animacion por Steps */
+.tipito{
+	position: absolute;
+	bottom: 3%;
+	animation-name: anim-nube;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+}
+.cuerpo{
+	width:184px;
+	height:325px;
+	background-image: url("img/capguy-walk.png");
+	animation-name: anim-fondoBody;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(7);
+}
+.cafe{
+	position: absolute;
+	bottom:3%;
+	left: 20%;
+}
+.cuerpoZ{
+	width:120px;
+	height:300px;
+	background-image: url("img/doodle-sprite.png");
+	background-size: cover;
+	animation-name: anim-fondoBody2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(9);
+	animation-delay: 0s;
+	animation-play-state: paused;
+}
+.cuerpoZ:hover{
+	animation-play-state: running;
+}
+.sombra{
+	width: 70%;
+	height: 20px;
+	background: rgba(0, 0, 0, 0.404);
+	filter:blur(5px);
+	border-radius: 50%;
+	transform: translate(20px,-20px);
+}
+
+ 
+
+
+
+
+
