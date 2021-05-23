@@ -1,5 +1,6 @@
 
 .caja {
+	position: relative;
 	width:70%;
 	height:100vh;
 	border:1px solid #333;
@@ -8,6 +9,7 @@
 	background: rgba(255, 255, 255, 0.527);
 }
 .logo{
+	position: absolute;
 	text-align: left;
 	width: 100px;
 }
@@ -56,14 +58,17 @@ h1{
 }
 
 @keyframes anim-bola1{
-	0%{transform: translateX(0px) rotate(0);}
-	100%{transform: translateX(500px) rotate(360deg);}
+	0%{ left:0;
+		transform: translateX(500px) rotate(0);}
+	100%{right:0;
+		transform: translateX(1000px) rotate(360deg);}
 }
 .logo{
 	/* nombre de la animacion que se aplica */
 	animation-name: anim-bola1;
 	/* tiempo de ejecucion de la animacion -> seg o ms */
 	animation-duration: 5000ms;
+	animation-fill-mode: both;
 	/* Tiempo de retraso o retardo, antes de la animacion */
 	animation-delay: 4s;
 	/* cantidad de iteraciones o ciclos, entre inicio y final */
