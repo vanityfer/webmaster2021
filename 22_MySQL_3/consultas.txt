@@ -1,0 +1,14 @@
+
+SELECT titulo,autor,nombre,stock FROM libros JOIN editoriales ON libros.cod_editorial=editoriales.id_editorial 
+
+SELECT titulo,autor,nombre,stock FROM webmaster2020.libros JOIN webmaster2020.editoriales ON libros.cod_editorial=editoriales.id_editorial 
+
+SELECT titulo,autor,nombre,stock FROM webmaster2020.libros JOIN webmaster2020.editoriales ON libros.cod_editorial=editoriales.id_editorial WHERE stock<4
+
+SELECT titulo,autor,if(precio<600,"saldo","cybermonday") AS "destino" from libros 
+
+SELECT titulo,autor,if(precio<80,"saldo",if(precio<60,'ofertas','te lo regalo')) from libros 
+
+SELECT titulo,autor,if(precio<80,"saldo",'te lo regalo'),nombre, precio from libros JOIN editoriales on libros.cod_editorial=editoriales.id_editorial
+
+
