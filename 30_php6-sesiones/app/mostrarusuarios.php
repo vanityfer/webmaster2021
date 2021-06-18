@@ -20,7 +20,27 @@
 
         <?php
 
-            /* Recuperar los datos de la tabla usuarios */
+            
+            // Sesiones
+            session_start();
+            // verificamos si estan dadas de alta, para mostrar el contenido. Sino, va al login
+
+            if( isset($_SESSION['id']) ){
+
+
+                echo "<div class='text-right'>Hola, ".$_SESSION['nombre_user'];
+                echo "<a href='salir.php'>Cerrar Sesión</a>";
+                
+                // averiguar el email / para Guille
+                $id = $_SESSION['id'];
+
+                include "conexion.php";
+                $query4 = mysqli_query($conexion, "SELECT email FROM usuarios WHERE id = '$id'"); 
+
+                $emailUser = mysqli_fetch_array($query4);
+                
+                echo "El email de ".$_SESSION['nombre_user']." es: ".$emailUser['email'];
+
 
             /* Buscador */
 
@@ -30,7 +50,7 @@
                 //realizar la busqueda, segun el dato enviado por search
             include "conexion.php";
 
-            $query2 = "SELECT * FROM usuarios where nombre like '%$search%' or apellido LIKE '%$search%'";
+            $query2 = "SELECT * FROM personal where nombre like '%$search%' or apellido LIKE '%$search%'";
 
             $consulta2 = mysqli_query($conexion, $query2); 
 
@@ -70,7 +90,7 @@
                 include "conexion.php";
                 
                 // consulta SELECT
-                $query1 = "SELECT * FROM usuarios";
+                $query1 = "SELECT * FROM personal";
                 $consulta1 = mysqli_query($conexion, $query1); 
                 
                 // ver resultados / nro que va a fonzar la condicion del for
@@ -102,6 +122,8 @@
                     echo "<tr><td>".$datos['nombre']." ".$datos['apellido']."</td>";
                     echo "<td>".$datos['edad']."</td>";
                     echo "<td> <a href='mailto:".$datos['email']."'> ".$datos['email']."</a></td></tr>";
+                
+                    // eliminar.php?id=datos['id']
                 }
                 echo '</tbody></table>';
                 
@@ -119,6 +141,11 @@
                 mysqli_close($conexion);
                 
             }
+
+        }else{
+            echo "Para ver el contenido, debes estar registrado.";
+            echo "<a href='formLogin.php'>login</a>";
+        }
                 
         ?>
     </div>
