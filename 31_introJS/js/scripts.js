@@ -5,11 +5,7 @@ comentario
 multilinea
 */
 
-var saludo = "Hola Mundo!";
-console.log(saludo) ;
 
-var saludo = "chau mundo!";
-console.log(saludo) ;
 
 //ES6 -> nuevas variables
 //let 
@@ -41,3 +37,4 @@ let boolean = true
 //indexOf(variable)
 console.log(typeof(string))
 //console.log(numeric)
+
