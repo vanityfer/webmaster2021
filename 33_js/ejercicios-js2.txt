@@ -1,0 +1,13 @@
+Operaciones
+1- Ejercicio #2: Conversión de edad
+Haz un programa que funcione de la siguiente forma:
+- El programa nos pregunta nuestro nombre.
+- El programa nos pregunta nuestra edad.
+- El programa da como resultado nuestro nombre y a continuación los días que hemos vivido hasta el momento (deberás multiplicar la edad por 365).
+
+Array
+2- Crear un array llamado *meses* y que almacene el nombre de los meses del año.
+Mostrar por consola la cantidad, y luego, los nombres de cada uno de los meses
+
+3- Crear un array de elementos que contenga nombres y posteriormente agregar más elementos por medio del método “push”
+
