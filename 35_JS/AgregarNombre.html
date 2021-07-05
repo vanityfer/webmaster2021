@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+
+    
+    <h1 class="m-5">Agregar nombre</h1>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Insertar usuario
+    </button>
+  <button type="button" id="btn-borrar" class="btn btn-success">borrar</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="" method="post" class="m-5">
+            <div class="modal-header">
+                <h2>Inserta un nombre</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body">
+                <input type="text" id="nombre" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button> -->
+                <input type="button" value="Agregar" id="btn-agregar" class="btn btn-success" data-bs-dismiss="modal"> 
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+    
+    <hr>
+    <div id="resp"></div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+        //Crear una funcion que ubique un elemento existente en el documento (por ej un div), pregunte tu nombre y lo inserte en el elemento.
+
+        //agregar
+        let btn1 = document.getElementById('btn-agregar')
+        btn1.addEventListener('click',function(){
+            let nombre = document.getElementById('nombre')
+            document.getElementById('resp').innerHTML += `<p>${nombre.value}</p>`
+            nombre.value = ""
+        }) 
+        //borrar
+        document.getElementById('btn-borrar').addEventListener('click',function(){
+            document.getElementById('resp').innerHTML=""
+        })
+
+
+    </script>
+</body>
+</html>

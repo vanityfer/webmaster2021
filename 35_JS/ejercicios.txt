@@ -1,0 +1,18 @@
+1- Permitirle al docente (ingresar el nombre) cargar 5 notas de alumnos. 
+	a. Mostrar cada una de las notas.
+	b. Mostrar la notas mas alta y la mas baja.	
+	c. Determinar el promedio de la clase. 
+	d. Mostrar el nombre del profesor.
+
+
+2. Armar una calculadora con funciones, pero los numeros sean leidos desde campos de formularios.
+
+
+3. Crear una funcion que ubique un elemento existente en el documento (por ej un div), pregunte tu nombre y lo inserte en el elemento.
+
+
+4. Crear un formulario con tres campos (usuario, password y verificacion de password).
+	a. Verificar que todos esten completos
+	b. comparar que password y su verificacion sean iguales
+	c. limitar a 8 el numero de caracteres para el password.
+	d. si todo lo anterior es correcto, mostrar un mensaje de "Usuario activiado", dentro de un elemento
