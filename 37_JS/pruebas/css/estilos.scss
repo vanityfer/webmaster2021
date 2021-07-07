@@ -1,0 +1,66 @@
+//variables con SCSS
+$color1: rgb(10, 10, 153);
+$color2:rgba(255, 255, 255, 0.863);
+$font-base: "Montserrat";
+
+
+/*comentario multilinea CSS*/
+html{
+    font-family:$font-base;
+}
+.logo{
+    color:$color1;
+}
+//body{
+    // background-color: $color1;
+//}
+
+//Nesting - Anidacion de selectores
+.navBar{
+    text-align: center;
+    .menu{// ul
+        list-style-type: none;
+        li{
+            display:inline-block;
+            .linkeoMenu{
+                color:white;
+                text:{
+                    decoration: none;
+                    transform: uppercase;
+                }
+                font:{
+                    size: 1.2em;
+                    weight: bold;
+                }
+                transition:1s;
+                &:hover{
+                    background: $color2;
+                    color:$color1
+                }
+                &:active{
+                    transform:translateY(5px);
+                }
+            }
+        }
+    }
+}
+
+//Extend
+%caja2{
+    border-radius: 5px;
+    border:2px solid tomato;
+    color:green;
+}
+.content{
+    background: $color1;
+    color:$color2;
+    padding: 1.2em;
+    @extend %caja2;
+}
+.content{
+    background: tomato;
+}
+
+.navBar{
+    @extend %caja2;
+}

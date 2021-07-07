@@ -1,0 +1,49 @@
+/*comentario multilinea CSS*/
+html {
+  font-family: "Montserrat";
+}
+
+.logo {
+  color: #0a0a99;
+}
+
+.navBar {
+  text-align: center;
+}
+.navBar .menu {
+  list-style-type: none;
+}
+.navBar .menu li {
+  display: inline-block;
+}
+.navBar .menu li .linkeoMenu {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: 1s;
+}
+.navBar .menu li .linkeoMenu:hover {
+  background: rgba(255, 255, 255, 0.863);
+  color: #0a0a99;
+}
+.navBar .menu li .linkeoMenu:active {
+  transform: translateY(5px);
+}
+
+.navBar, .content {
+  border-radius: 5px;
+  border: 2px solid tomato;
+  color: green;
+}
+
+.content {
+  background: #0a0a99;
+  color: rgba(255, 255, 255, 0.863);
+  padding: 1.2em;
+}
+
+.content {
+  background: tomato;
+}
