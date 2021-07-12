@@ -11,5 +11,9 @@ let selecciones = ["Argentina","Uruguay","Brasil"]
 let fecha = new Date()
 console.log(fecha.getDate())
 
+//Exportar un modulo
+exports.listSelecciones = selecciones
+// ES6 -> export const listSelecciones = selecciones
+
 
 
