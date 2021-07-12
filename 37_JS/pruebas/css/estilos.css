@@ -1,5 +1,5 @@
 /*comentario multilinea CSS*/
-html {
+body {
   font-family: "Montserrat";
 }
 
@@ -17,7 +17,7 @@ html {
   display: inline-block;
 }
 .navBar .menu li .linkeoMenu {
-  color: white;
+  color: white !important;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -25,25 +25,33 @@ html {
   transition: 1s;
 }
 .navBar .menu li .linkeoMenu:hover {
-  background: rgba(255, 255, 255, 0.863);
-  color: #0a0a99;
+  background: #0a0a99 !important;
+  color: rgba(255, 255, 255, 0.863) !important;
 }
 .navBar .menu li .linkeoMenu:active {
   transform: translateY(5px);
 }
 
-.navBar, .content {
+.content {
   border-radius: 5px;
   border: 2px solid tomato;
   color: green;
 }
 
 .content {
-  background: #0a0a99;
+  background: #070769;
   color: rgba(255, 255, 255, 0.863);
   padding: 1.2em;
+  transition: 1s;
+}
+.content:hover {
+  background: #0a0a99;
 }
 
-.content {
-  background: tomato;
+/*
+.navBar{
+    @extend %caja2;
+}*/
+.contenido div:nth-child(3) {
+  transform: rotate(180deg);
 }
