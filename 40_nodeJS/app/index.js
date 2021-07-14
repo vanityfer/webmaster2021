@@ -3,23 +3,52 @@ const express = require('express')
 
 const app = express()
 //Puerto de conexion
-const port = 3001
+const port = 3000
 
-let data = {
+let data = [{
     nombre: "Martin",
     lugar: "Buenos Aires",
-    anio: 2021
-}
+    anio: 2021,
+    avatar: "martin.jpg"
+},{
+    nombre: "Jose",
+    lugar: "Mar del plata",
+    anio: 2021,
+    avatar: "jose.jpg"
+},{
+    nombre: "maria",
+    lugar: "Salta",
+    anio: 2021,
+    avatar: "maria.jpg" 
+}]
+
+//Uso de archivos publicos
+app.use(express.static('assets'))
 
 //Middelware
 app.get('/user1', function(req, res) {
     //req -> request
     //res -> response
-  res.send(`<h1>Saludos</h1><p>Hola, soy <strong>${data.nombre}</strong>, de <em>${data.lugar}</em>.`)
+    let users = `<h1>Usuarios</h1>`
+    for (let i = 0; i < data.length; i++) {
+        users += `<div><img style='max-width:225px' src='img/${data[i].avatar}'>
+        <p>Hola, soy <strong>${data[i].nombre}</strong>, de <em>${data[i].lugar}</em>.</p>`
+    }
+    users += `<div><a href='/'>volver</a></div></div>`
+    res.send(users)
 })
 
+app.get('/contacto', (req,res) => {
+    res.send(`<h1>Seccion Contacto</h1>
+    <form method='post'>
+        <input name='data1' placeholder='nombre'><input type='submit'>
+    </form>  
+    `)
+})
+
+
 app.get('/', function(req,res){
-    res.send("<h1>Inicio</h1><a href='/inicio'>Ver Saludo</a>")
+    res.send("<h1>Inicio</h1><a href='/user1'>Ver Usuarios</a> <br> <a href='/contacto'>Contacto</a>")
 })
 
 //arrow function
