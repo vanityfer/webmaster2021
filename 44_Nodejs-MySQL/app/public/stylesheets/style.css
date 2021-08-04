@@ -2,3 +2,6 @@
 .userInactivo{
     filter: grayscale(1)
 }
+.textareas{
+    resize: none;
+}

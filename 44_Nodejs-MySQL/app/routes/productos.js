@@ -13,7 +13,7 @@ const tablaProductos = require('../models/tablaProductos')
   //     {id : 4, nombre : 'Vans U OLD SKOOL', descripcion : 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se', precio : 520, stock : 10, imagen : 'zapa2.jpg', categoria: "calzado" },
   //     {id : 5, nombre: 'Nike Air Max', descripcion : 'En 1990, la línea Air Max dio un gran paso con el lanzamiento de un modelo que enseguida transcendió su función como zapatillas de running. Los más jóvenes las conocerán como las Air Max 90, pero tras su lanzamiento, el diseño fue visto como una evolución de las Air Max originales de 1987 y se las acabó llamando Air Max III.', precio : 120, imagen : 'zapa1.jpg', stock : 0, categoria: "calzado" },
   //     {id : 6, nombre: 'Sillon oficina', descripcion: 'No es un sillon cualquiera, este es negro, sube y baja como los otros, pero mejor', precio : 5000, imagen: 'sillon2.jpg', stock: 6, categoria: "art. de oficina" },
-  //     {   id : 7, nombre : 'EPSON L3150 Multifuncion Wifi EcoTank', descripcion : 'La multifunctional inalámbrica EcoTank L3150 te ofrece la revolucionaria impresión sin cartuchos, con nuevo diseño de tanques frontales, botellas de tinta con llenado automático y codificadas para llenado fácil de cada color.', precio : 18000, imagen : null , stock : 8, categoria: "art. de oficina"  }     
+  //     {id : 7, nombre : 'EPSON L3150 Multifuncion Wifi EcoTank', descripcion : 'La multifunctional inalámbrica EcoTank L3150 te ofrece la revolucionaria impresión sin cartuchos, con nuevo diseño de tanques frontales, botellas de tinta con llenado automático y codificadas para llenado fácil de cada color.', precio : 18000, imagen : null , stock : 8, categoria: "art. de oficina"  }     
   // ]
   
 let title = "Productos"
@@ -25,6 +25,7 @@ let envios = 'ENVIOS x CORREO A TODO EL PAIS. <br> Podes cargarle tu dirección 
 router.get('/', async (req,res) => {
         //consulta
       const traerProd = await tablaProductos.findAll({
+        //attributes:['id','nombre','descripcion'],
         order:[
           ['id', 'DESC']
         ]
@@ -37,7 +38,14 @@ router.get('/:id',async (req,res) => {
     let paramURL = req.params.id
 
     const consultaProd = await tablaProductos.findOne({where:{id:paramURL}});
-    console.log(consultaProd.dataValues)
+    //console.log(consultaProd.dataValues)
+    /*
+    para Bruno
+    if(!user){
+      res.render("error.hbs",{data})
+    }else{
+      res.render("gracias.hbs",{data})
+    }*/
 
     res.render('productoSimple.hbs',{prodSingle:consultaProd,legales,envios,title,year})
     // res.json(prodSingle)

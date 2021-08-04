@@ -1,7 +1,7 @@
-//importamos express
 const express = require('express')
-//ejecutar el sistema de routing de express
 const router = express.Router()
+//importamos Nodemailer
+const nodemailer = require("nodemailer");
 
 let data = {
     titulo:"Contacto",
@@ -15,46 +15,44 @@ router.get('/',function(request,response){
     response.render('contacto.hbs',{data,year})
 })
 
-//Cargar productos
-const tablaProductos = require('../models/tablaProductos')
+router.post('/', (req,res) => {
+    // console.log(req.body.nombre)
+    // console.log(req.body.email)
 
-router.post('/', async (req,res) => {
-    //console.log(req.body.nombre)
-    //console.log(req.body.email)
-
-    // const user = {
-    //     nombre: req.body.nombre,
-    //     email: req.body.email
-    // }
-    const newProd = {
-        id:0,
+    const user = {
         nombre: req.body.nombre,
-        descripcion: req.body.descripcion,
-        imagen: req.body.imagen,
-        precio: req.body.precio,
-        stock: req.body.stock,
-        categoria: req.body.categoria,
+        email: req.body.email,
+        mensaje: req.body.mensaje
+    } 
+
+    //Enviar datos por email -> Nodemailer
+    async function main(){
+
+        //transporter
+        const transporter = require('../config/transporter')
+
+        // Envio, segun la conexion del Transport
+        let info = await transporter.sendMail({
+            from: `${user.nombre} <${user.email}>`, // sender address
+            to: "guido.varela@gmail.com", // list of receivers
+            subject: "Nuevo Mensaje", // Subject line
+            //text: "Hello world?", // plain text body
+            html: `<strong>Nuevo Contacto</strong>
+            <p>Nombre: ${user.nombre}</p>
+            <p>Email: ${user.email}</p>
+            <p>Mensaje: ${user.mensaje}</p>`, // html body
+        });
+
+        //console.log("Message sent: %s", info.messageId);
+        console.log(info)
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+        res.render('enviocontacto',{user, title, year, envio:true})
     }
-    console.log(newProd)
-    //ojo el orden de los campos -> ver la tabla antes
-    //try {
-        const cargarProd = await tablaProductos.create({
-            id: newProd.id,
-            nombre:newProd.nombre,
-            descripcion:newProd.descripcion,
-            precio:newProd.precio,
-            imagen:newProd.imagen,
-            stock:newProd.stock,
-            categoria:newProd.categoria
-        })    
-        //console.log(cargarProd)
-    
-        res.render("contacto.hbs",{data,year,alta:true})
+
+    //main().catch(res.render("errorcontacto.hbs",{error:"error"}));
+    main().catch(console.error)
         
-    // } catch (error) {
-    //     console.log("Error en el alta "+error)
-    //     res.render("contacto.hbs",{data,year,alta:false})
-    // }
 })
 
 module.exports = router;
