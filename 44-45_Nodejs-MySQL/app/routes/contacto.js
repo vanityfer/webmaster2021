@@ -3,10 +3,9 @@ const router = express.Router()
 //importamos Nodemailer
 const nodemailer = require("nodemailer");
 
-let data = {
-    titulo:"Contacto",
-    p:"hola mundo! Chau Munndo!"
-}
+
+let title = "Contacto"
+
 let year = new Date().getFullYear();
 
 router.get('/',function(request,response){
