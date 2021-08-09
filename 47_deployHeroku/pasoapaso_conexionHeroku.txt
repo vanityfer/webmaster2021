@@ -1,0 +1,19 @@
+1) cuenta Heroku
+2) crear repo, subir el proyecto node (sin node_modules)
+3) vinculamos git -> Heroku -> deploy
+
+4) instalar complemento en Heroku -> ClearDb MySQL
+5) en el proyecto, instalar Heroku CLI (tarda un poco y hay que arreglar vulnerabilidades) -> npm install heroku 
+6) npm audit fix
+7) heroku login
+8) creamos la base de datos -> heroku config --app nombreProyecto
+mysql://b9d288e326c067:ad7d4dbf@eu-cdbr-west-01.cleardb.com/heroku_7ec77051f3a3e63?reconnect=true
+userMysql: b9d288e326c067
+passMysql: ad7d4dbf
+hostMySQL: eu-cdbr-west-01.cleardb.com
+nameDB: heroku_7ec77051f3a3e63
+
+9) instalar MYSQL Workbench -> https://www.mysql.com/products/workbench/
+10) configurar DB Heroku en Workbench, importar la base de datos
+11) conexion desde node a Mysql, con los datos de heroku + cleardbMySQL
+12) Deploy en Heroku
